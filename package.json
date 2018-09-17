@@ -1,0 +1,34 @@
+{
+  "version": "1.0.0",
+  "keywords": [
+    "textlintrule"
+  ],
+  "main": "lib/readable-kanji-balance.js",
+  "files": [
+    "lib/",
+    "src/"
+  ],
+  "scripts": {
+    "test": "textlint-scripts test",
+    "build": "textlint-scripts build",
+    "prepublish": "npm run --if-present build"
+  },
+  "devDependencies": {
+    "textlint-scripts": "^1.4.2"
+  },
+  "name": "textlint-rule-readable-kanji-balance-ja",
+  "directories": {
+    "test": "test"
+  },
+  "author": "Tomoyuki Kato",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "kuromojin": "^1.4.0",
+    "match-index": "^1.0.1",
+    "sentence-splitter": "^3.0.10",
+    "structured-source": "^3.0.2",
+    "textlint-rule-helper": "^2.0.0",
+    "textlint-util-to-string": "^2.1.1"
+  }
+}
