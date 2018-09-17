@@ -1,5 +1,5 @@
 {
-  "version": "0.0.4",
+  "version": "0.0.5",
   "keywords": [
     "textlintrule",
     "japanese",
@@ -14,7 +14,7 @@
   "scripts": {
     "test": "textlint-scripts test",
     "build": "textlint-scripts build",
-    "prepublish": "npm run --if-present build"
+    "prepare": "npm run --if-present build"
   },
   "devDependencies": {
     "textlint-scripts": "^1.4.2"
@@ -22,6 +22,10 @@
   "name": "textlint-rule-readable-kanji-balance-ja",
   "directories": {
     "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guruguruman/textlint-rule-readable-kanji-balance-ja.git"
   },
   "author": "Tomoyuki Kato",
   "license": "ISC",
