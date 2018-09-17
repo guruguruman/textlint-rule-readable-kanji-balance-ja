@@ -52,7 +52,7 @@ module.exports = function(context, options = {}) {
           return;
         }
 
-        const message = `漢字出現比率が高い1文が見つかりました（漢字出現率： ${kanjiPercentage}%）。漢字比率が高い文は、読者に読みにくい印象を与えると言われています。漢字の出現率の目安を「${kanjiPreferBalance}%前後」として、表現を改定してみましょう。`;
+        const message = `漢字出現比率の高い1文が見つかりました（漢字出現率： ${kanjiPercentage}%）。漢字比率が高い文は、読者に読みにくい印象を与えると言われています。漢字の出現率の目安を「${kanjiPreferBalance}%前後」として、表現を改定してみましょう。`;
         const ruleError = new RuleError(message, {});
 
         report(sentence, ruleError);
