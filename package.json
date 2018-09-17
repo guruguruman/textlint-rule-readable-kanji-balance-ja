@@ -3,7 +3,7 @@
   "keywords": [
     "textlintrule"
   ],
-  "main": "lib/readable-kanji-balance.js",
+  "main": "lib/readable-kanji-balance-ja.js",
   "files": [
     "lib/",
     "src/"
@@ -21,7 +21,7 @@
     "test": "test"
   },
   "author": "Tomoyuki Kato",
-  "license": "MIT",
+  "license": "ISC",
   "description": "",
   "dependencies": {
     "kuromojin": "^1.4.0",

@@ -3,7 +3,7 @@ const TextLintTester = require("textlint-tester");
 const tester = new TextLintTester();
 
 // rule
-const rule = require("../src/readable-kanji-balance");
+const rule = require("../src/readable-kanji-balance-ja");
 
 // ruleName, rule, { valid, invalid }
 tester.run("rule", rule, {
