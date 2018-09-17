@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "0.0.1",
   "keywords": [
     "textlintrule"
   ],
@@ -25,7 +25,6 @@
   "description": "",
   "dependencies": {
     "kuromojin": "^1.4.0",
-    "match-index": "^1.0.1",
     "sentence-splitter": "^3.0.10",
     "structured-source": "^3.0.2",
     "textlint-rule-helper": "^2.0.0",
