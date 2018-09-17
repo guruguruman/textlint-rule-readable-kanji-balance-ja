@@ -8,6 +8,11 @@ Install with [npm](https://www.npmjs.com/):
 
     npm install git+https://github.com/guruguruman/textlint-rule-readable-kanji-balance-ja.git
 
+Or install with yarn:
+
+    yarn add https://github.com/guruguruman/textlint-rule-readable-kanji-balance-ja.git
+
+
 ## Usage
 
 Via `.textlintrc`(Recommended)
