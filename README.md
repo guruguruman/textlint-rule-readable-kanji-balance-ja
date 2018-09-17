@@ -1,17 +1,14 @@
 # textlint-rule-readable-kanji-balance-ja
 
-
-
 ## Install
 
 Install with [npm](https://www.npmjs.com/):
 
-    npm install git+https://github.com/guruguruman/textlint-rule-readable-kanji-balance-ja.git
+    npm install textlint-rule-readable-kanji-balance-ja
 
 Or install with yarn:
 
-    yarn add https://github.com/guruguruman/textlint-rule-readable-kanji-balance-ja.git
-
+    yarn add textlint-rule-readable-kanji-balance-ja
 
 ## Usage
 
