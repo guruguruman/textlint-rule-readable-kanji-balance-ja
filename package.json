@@ -1,7 +1,10 @@
 {
-  "version": "0.0.2",
+  "version": "0.0.4",
   "keywords": [
-    "textlintrule"
+    "textlintrule",
+    "japanese",
+    "textlint",
+    "kanji"
   ],
   "main": "lib/readable-kanji-balance-ja.js",
   "files": [
@@ -24,9 +27,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "kuromojin": "^1.4.0",
     "sentence-splitter": "^3.0.10",
-    "structured-source": "^3.0.2",
     "textlint-rule-helper": "^2.0.0",
     "textlint-util-to-string": "^2.1.1"
   }

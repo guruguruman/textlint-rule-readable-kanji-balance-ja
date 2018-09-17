@@ -1,15 +1,22 @@
 "use strict";
 
 import {RuleHelper} from "textlint-rule-helper";
-import {getTokenizer} from "kuromojin";
 import {splitAST, Syntax as SentenceSyntax} from "sentence-splitter";
-import Source from "structured-source";
 import StringSource from "textlint-util-to-string";
 
 const toBeExcludedSymbolRegExp = /[!"#$%&'()\*\+\-\.,\/:;<=>?@\[\\\]^_`{|}~\s]|[\r\n|\n|\r]/g
 const kanjiRegExp = /[々〇〻\u3400-\u9FFF\uF900-\uFAFF]|[\uD840-\uD87F][\uDC00-\uDFFF]/g
+const defaultOptions = {
+    skip_length: 20,
+    report_kanji_balance: 45,
+    prefer_kanji_balance: 30,
+};
 
-module.exports = function reporter(context) {
+module.exports = function(context, options = {}) {
+  const skippableSentenceLength = options.skip_length || defaultOptions.skip_length;
+  const kanjiBalanceToBeReported = options.report_kanji_balance || defaultOptions.report_kanji_balance;
+  const kanjiPreferBalance = options.prefer_kanji_balance || defaultOptions.prefer_kanji_balance;
+
   const {Syntax, RuleError, report, fixer, getSource} = context;
   const helper = new RuleHelper(context);
 
@@ -29,9 +36,6 @@ module.exports = function reporter(context) {
         const source = new StringSource(sentence);
         const sentenceText = source.toString();
 
-        const skippableSentenceLength = 10;
-        const kanjiBetterBalanceInPercentage = 45;
-
         if (sentenceText.length < skippableSentenceLength) {
           return;
         }
@@ -44,11 +48,11 @@ module.exports = function reporter(context) {
 
         const kanjiPercentage = Math.round(((symbolExcludedTextLength - kanjiExcludedTextLength) / symbolExcludedTextLength) * 100);
 
-        if (kanjiPercentage < kanjiBetterBalanceInPercentage) {
+        if (kanjiPercentage < kanjiBalanceToBeReported) {
           return;
         }
 
-        const message = `1文における漢字比率が「${kanjiPercentage}%」と多くの漢字が含まれています。漢字比率の目安は30%前後です。漢字が多すぎる場合、読みにくさにつながることがあります。`;
+        const message = `漢字出現比率が高い1文が見つかりました（漢字出現率： ${kanjiPercentage}%）。漢字比率が高い文は、読者に読みにくい印象を与えると言われています。漢字の出現率の目安を「${kanjiPreferBalance}%前後」として、表現を改定してみましょう。`;
         const ruleError = new RuleError(message, {});
 
         report(sentence, ruleError);
