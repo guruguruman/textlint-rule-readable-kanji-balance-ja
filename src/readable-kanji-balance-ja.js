@@ -30,7 +30,7 @@ module.exports = function reporter(context) {
         const sentenceText = source.toString();
 
         const skippableSentenceLength = 10;
-        const kanjiBetterBalanceInPercentage = 40;
+        const kanjiBetterBalanceInPercentage = 45;
 
         if (sentenceText.length < skippableSentenceLength) {
           return;
@@ -48,7 +48,7 @@ module.exports = function reporter(context) {
           return;
         }
 
-        const message = `1文における漢字比率が「${kanjiPercentage}%」と多くの漢字が含まれています。（目標比率: ${kanjiBetterBalanceInPercentage}%）漢字が多すぎる場合、読みにくさにつながることがあります。`;
+        const message = `1文における漢字比率が「${kanjiPercentage}%」と多くの漢字が含まれています。漢字比率の目安は30%前後です。漢字が多すぎる場合、読みにくさにつながることがあります。`;
         const ruleError = new RuleError(message, {});
 
         report(sentence, ruleError);
